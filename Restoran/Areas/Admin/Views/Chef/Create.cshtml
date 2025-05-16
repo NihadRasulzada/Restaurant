@@ -1,0 +1,51 @@
+﻿@using Restoran.DTOs.ChefDtos
+@using Restoran.Models
+@model CreateChefDto
+
+<div class="container-fluid">
+    <div class="card shadow mb-4">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="card-body">
+            <div class="container-fluid">
+                <form asp-action="Create" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label asp-for="FullName">Chef FullName</label>
+                        <input asp-for="FullName" class="form-control">
+                        <span asp-validation-for="FullName"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TwitterUrl">Chef TwitterUrl</label>
+                        <input asp-for="TwitterUrl" class="form-control">
+                        <span asp-validation-for="TwitterUrl"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FacebookUrl">Chef FacebookUrl</label>
+                        <input asp-for="FacebookUrl" class="form-control">
+                        <span asp-validation-for="FacebookUrl"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="InstagramUrl">Chef InstagramUrl</label>
+                        <input asp-for="InstagramUrl" class="form-control">
+                        <span asp-validation-for="InstagramUrl"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Photo">Chef Photo</label>
+                        <input asp-for="Photo" class="form-control">
+                        <span asp-validation-for="Photo"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label asp-for="ChefDesignationId">Chef designation</label>
+                        <select class="form-control" asp-for="ChefDesignationId">
+                            @foreach (ChefDesignation item in (List<ChefDesignation>)ViewBag.ChefDesignation)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

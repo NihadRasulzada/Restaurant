@@ -1,0 +1,85 @@
+﻿@using Restoran.DTOs.MemberDtos
+@model IEnumerable<ChefDto>
+
+@{
+    int counter = 0;
+}
+
+<div class="container-fluid">
+    <h1 class="h3 mb-2 text-gray-800">Position </h1>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary d-flex justify-content-end">
+                <a class="btn btn-primary" asp-action="Create">Create Position</a>
+            </h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Id</th>
+                            <th>Img</th>
+                            <th>FullName</th>
+                            <th>DesignationName</th>
+                            <th>Status</th>
+                            <th class="text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            counter++;
+                            <tr>
+                                <td>@counter</td>
+                                <td>@item.Id</td>
+                                <td>
+                                    <div style="width: 150px">
+                                        <img width="100%" src="~/Uploads/Chef/@item.ImgUrl" />
+                                    </div>
+                                </td>
+                                <td>@item.FullName</td>
+                                <td>@item.DesignationName</td>
+                                <td>
+                                    @if (item.IsDeactive)
+                                    {
+                                        <span class="btn btn-danger text-white">Deactive</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="btn btn-success text-white">Active</span>
+                                    }
+                                </td>
+
+                                <td class="text-right">
+                                    <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary rounded-pill text-white">Update</a>
+
+                                    @if (item.IsDeactive)
+                                    {
+                                        <a asp-action="Activity" asp-route-id="@item.Id" class="btn btn-success rounded-pill text-white ml-2" style="width:125px;">Activate</a>
+                                    }
+                                    else
+                                    {
+                                        <a asp-action="Activity" asp-route-id="@item.Id" class="btn btn-danger rounded-pill text-white ml-2" style="width:125px;">Deactivate</a>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/Admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Admin/js/demo/datatables-demo.js"></script>
+}
+
+@section Styles {
+    <link href="~/Admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+}
