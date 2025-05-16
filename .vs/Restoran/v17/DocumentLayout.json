@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\II Novbe\\Desktop\\Restoran\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7859D4CC-D88F-48EB-BF54-4180102CCBA4}|Restoran\\Restoran.csproj|c:\\users\\ii novbe\\desktop\\restoran\\restoran\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7859D4CC-D88F-48EB-BF54-4180102CCBA4}|Restoran\\Restoran.csproj|solutionrelative:restoran\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +14,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 349,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\II Novbe\\Desktop\\Restoran\\Restoran\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Restoran\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\II Novbe\\Desktop\\Restoran\\Restoran\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Restoran\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAqwDcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T05:56:37.363Z",
+              "EditorCaption": ""
             }
           ]
         }
